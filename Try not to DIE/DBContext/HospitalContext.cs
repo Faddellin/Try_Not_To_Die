@@ -1,14 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Try_not_to_DIE.Models.Inspection;
+﻿using Try_not_to_DIE.Models.Inspection;
 using Try_not_to_DIE.Models.Patient;
 using Try_not_to_DIE.Models.Doctor;
 using Try_not_to_DIE.Models.Speciality;
 using Try_not_to_DIE.Models.Consultation;
 using Try_not_to_DIE.Models.Comment;
 using Try_not_to_DIE.Models.Diagnosis;
-using Try_not_to_DIE.Models.Icd10;
 using Try_not_to_DIE.Models;
 using Try_not_to_DIE.Models.EmailNotification;
+using Microsoft.EntityFrameworkCore;
 
 namespace Try_not_to_DIE.DBContext
 {

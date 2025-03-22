@@ -70,6 +70,32 @@ namespace Try_not_to_DIE.Controllers
             return Ok(answer);
         }
 
+        /// <summary>
+        /// Import speciality list
+        /// </summary>
+        /// <response code="200">Specialties paged list retrieved</response>
+        /// <response code="400">Invalid arguments for filtration/pagination</response>
+        /// <response code="500">InternalServerError</response>
+        [HttpPut]
+        [Authorize]
+        [ProducesResponseType(typeof(SpecialtiesPagedListModel), 200)]
+        [ProducesResponseType(typeof(ResponseModel), 500)]
+        [Route("dictionary/speciality")]
+        public async Task<IActionResult> ImportSpecialityList()
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            if (!_dbCheckerService.IsConnected())
+            {
+                return StatusCode(500, new ResponseModel() { status = "Error", message = "Couldn't connect to the database" });
+            }
+
+            await _specialityService.ImportSpecialities();
+
+            return Ok();
+        }
 
 
         /// <summary>

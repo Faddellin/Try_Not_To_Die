@@ -3,7 +3,6 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
-/Try not to DIE/ALL_CID
 /docker
 /Try_not_to_DIETests
 

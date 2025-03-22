@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using System.Reflection;
 using System.Text.RegularExpressions;
 using Try_not_to_DIE.Configuration;
 using Try_not_to_DIE.DBContext;
@@ -9,9 +7,7 @@ using Try_not_to_DIE.Models;
 using Try_not_to_DIE.Models.Exceptions;
 using Try_not_to_DIE.Models.Icd10;
 using Try_not_to_DIE.Models.Icd10.Icd10ImportModels;
-using Try_not_to_DIE.Models.Speciality;
 using Try_not_to_DIE.ServicesInterfaces;
-using static Try_not_to_DIE.Services.SpecialityService;
 
 namespace Try_not_to_DIE.Services
 {
@@ -21,7 +17,7 @@ namespace Try_not_to_DIE.Services
         private readonly IJsonReaderService _jsonReaderService;
         private readonly HospitalContext _context;
 
-        public Icd10Service(Icd10Repository icd10Repository, IOptions<AppConfig> config, IJsonReaderService jsonReaderService, HospitalContext context)
+        public Icd10Service(IOptions<AppConfig> config, IJsonReaderService jsonReaderService, HospitalContext context)
         {
             _config = config;
             _jsonReaderService = jsonReaderService;

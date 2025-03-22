@@ -7,5 +7,6 @@ public class AppConfig
 {
     public AuthConfig authConfig {  get; set; }
     public string Icd10FilePath { get; set; }
+    public string SpecialitiesFilePath { get; set; }
 
 }

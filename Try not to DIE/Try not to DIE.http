@@ -1,0 +1,6 @@
+@Try_not_to_DIE_HostAddress = http://localhost:5096
+
+GET {{Try_not_to_DIE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
